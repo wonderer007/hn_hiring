@@ -25,6 +25,13 @@ python -m hn_ingest posts --force
 # Fetch a different thread kind
 python -m hn_ingest posts --kind seekers
 
+# Fetch posts for a single thread by HN story id
+# Works whether or not the thread was previously ingested
+python -m hn_ingest posts --thread-id 42830922
+
+# Combine with --force to re-fetch a specific thread
+python -m hn_ingest posts --thread-id 42830922 --force
+
 # Print a stats report (counts, sparkline, sample posts)
 python -m hn_ingest stats
 

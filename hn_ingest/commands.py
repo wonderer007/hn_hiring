@@ -42,16 +42,41 @@ def cmd_threads() -> None:
     print(f"Done. {stored} threads stored.")
 
 
-def cmd_posts(force: bool = False, kind: str = "hiring") -> None:
-    """Fetch top-level comments for threads of the given kind."""
+def cmd_posts(force: bool = False, kind: str = "hiring", thread_id: int | None = None) -> None:
+    """Fetch top-level comments for threads of the given kind, or a single thread by id."""
     conn = get_connection()
-    rows = conn.execute(
-        "SELECT id, title, month FROM threads WHERE kind = ? ORDER BY month",
-        (kind,),
-    ).fetchall()
+
+    if thread_id is not None:
+        rows = conn.execute(
+            "SELECT id, title, month FROM threads WHERE id = ?", (thread_id,)
+        ).fetchall()
+        if not rows:
+            # Thread not in DB yet — fetch it on the fly from the API
+            print(f"Thread {thread_id} not in database, fetching from API…")
+            item = fetch_thread_items(thread_id)
+            title = item.get("title") or ""
+            created_at = item.get("created_at") or ""
+            fallback = created_at[:7] if len(created_at) >= 7 else None
+            upsert_thread(conn, {
+                "id": thread_id,
+                "title": title,
+                "kind": classify_kind(title),
+                "month": parse_month(title, fallback),
+                "created_at": created_at,
+                "num_comments": item.get("num_comments"),
+            })
+            conn.commit()
+            rows = conn.execute(
+                "SELECT id, title, month FROM threads WHERE id = ?", (thread_id,)
+            ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT id, title, month FROM threads WHERE kind = ? ORDER BY month",
+            (kind,),
+        ).fetchall()
 
     if not rows:
-        print(f"No threads with kind='{kind}' found. Run 'threads' first.")
+        print(f"No threads found. Run 'threads' first.")
         conn.close()
         return
 

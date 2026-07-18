@@ -23,6 +23,13 @@ def main() -> None:
         default="hiring",
         help="Thread kind to fetch (default: hiring)",
     )
+    posts_p.add_argument(
+        "--thread-id",
+        type=int,
+        default=None,
+        metavar="ID",
+        help="Fetch posts for a single thread by HN story id",
+    )
 
     sub.add_parser("stats", help="Print a sanity-check report")
     sub.add_parser("all", help="Run threads + posts + stats")
@@ -32,7 +39,7 @@ def main() -> None:
     if args.command == "threads":
         cmd_threads()
     elif args.command == "posts":
-        cmd_posts(force=args.force, kind=args.kind)
+        cmd_posts(force=args.force, kind=args.kind, thread_id=args.thread_id)
     elif args.command == "stats":
         cmd_stats()
     elif args.command == "all":
