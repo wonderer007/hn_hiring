@@ -29,6 +29,70 @@ CREATE TABLE IF NOT EXISTS posts (
 
 CREATE INDEX IF NOT EXISTS idx_posts_thread ON posts(thread_id);
 CREATE INDEX IF NOT EXISTS idx_threads_month ON threads(month, kind);
+
+CREATE TABLE IF NOT EXISTS extractions (
+    post_id INTEGER NOT NULL REFERENCES posts(id),
+    prompt_version TEXT NOT NULL,
+    schema_version INTEGER NOT NULL,
+    model TEXT NOT NULL,
+    raw_json TEXT NOT NULL,
+    input_tokens INTEGER,
+    output_tokens INTEGER,
+    status TEXT NOT NULL,
+    error TEXT,
+    created_at TEXT NOT NULL,
+    PRIMARY KEY (post_id, prompt_version)
+);
+
+CREATE TABLE IF NOT EXISTS jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    post_id INTEGER NOT NULL,
+    prompt_version TEXT NOT NULL,
+    company_name TEXT,
+    company_stage TEXT,
+    is_yc TEXT,
+    title_raw TEXT,
+    title_normalized TEXT,
+    seniority TEXT,
+    employment_type TEXT,
+    salary_min REAL,
+    salary_max REAL,
+    salary_currency TEXT,
+    salary_period TEXT,
+    salary_equity TEXT,
+    workplace_policy TEXT,
+    remote_region TEXT,
+    visa_sponsorship TEXT,
+    month TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS job_locations (
+    job_id INTEGER NOT NULL REFERENCES jobs(id),
+    city TEXT,
+    region TEXT,
+    country TEXT
+);
+
+CREATE TABLE IF NOT EXISTS job_technologies (
+    job_id INTEGER NOT NULL REFERENCES jobs(id),
+    tech_raw TEXT NOT NULL,
+    tech TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS post_classification (
+    post_id INTEGER NOT NULL,
+    prompt_version TEXT NOT NULL,
+    post_type TEXT NOT NULL,
+    ai_builds TEXT,
+    ai_workflow TEXT,
+    ai_skills TEXT,
+    PRIMARY KEY (post_id, prompt_version)
+);
+
+CREATE INDEX IF NOT EXISTS idx_jobs_month ON jobs(month);
+CREATE INDEX IF NOT EXISTS idx_jobs_title ON jobs(title_normalized);
+CREATE INDEX IF NOT EXISTS idx_job_tech ON job_technologies(tech);
+CREATE INDEX IF NOT EXISTS idx_job_city ON job_locations(city);
 """
 
 

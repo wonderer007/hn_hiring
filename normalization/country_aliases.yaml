@@ -1,0 +1,47 @@
+# country_aliases.yaml
+# Map raw country strings to ISO 3166-1 alpha-2 codes.
+# Keys are lowercased at match time.
+
+usa: US
+"united states": US
+"united states of america": US
+us: US
+america: US
+uk: GB
+"united kingdom": GB
+"great britain": GB
+england: GB
+gb: GB
+germany: DE
+deutschland: DE
+france: FR
+netherlands: NL
+holland: NL
+"the netherlands": NL
+sweden: SE
+denmark: DK
+norway: "NO"
+finland: FI
+switzerland: CH
+austria: AT
+spain: ES
+portugal: PT
+italy: IT
+poland: PL
+"czech republic": CZ
+czechia: CZ
+belgium: BE
+ireland: IE
+canada: CA
+australia: AU
+"new zealand": NZ
+japan: JP
+"south korea": KR
+korea: KR
+china: CN
+india: IN
+singapore: SG
+israel: IL
+brazil: BR
+"the eu": EU
+europe: EU

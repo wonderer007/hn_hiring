@@ -5,6 +5,9 @@ description = "Ingest HN 'Who is hiring?' threads into SQLite"
 requires-python = ">=3.11"
 dependencies = [
     "httpx>=0.27",
+    "openai>=1.84",
+    "pyyaml>=6.0",
+    "anyio>=4.0",
 ]
 
 [build-system]

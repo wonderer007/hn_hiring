@@ -1,0 +1,34 @@
+# currency_aliases.yaml — map raw currency strings to ISO 4217 codes
+
+"$": USD
+"us$": USD
+usd: USD
+"k$": USD
+"us dollars": USD
+"€": EUR
+eur: EUR
+euros: EUR
+"£": GBP
+gbp: GBP
+"british pounds": GBP
+"cad": CAD
+"cad$": CAD
+"c$": CAD
+"canadian dollars": CAD
+aud: AUD
+"a$": AUD
+"au$": AUD
+"australian dollars": AUD
+"sgd": SGD
+"s$": SGD
+"inr": INR
+"₹": INR
+"brl": BRL
+"r$": BRL
+"chf": CHF
+"sfr": CHF
+"nok": "NOK"
+"sek": SEK
+"dkk": DKK
+"ils": ILS
+"₪": ILS

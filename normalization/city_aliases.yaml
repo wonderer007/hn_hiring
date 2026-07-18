@@ -1,0 +1,93 @@
+# city_aliases.yaml
+# aliases: normalize common abbreviations/variants to canonical city names
+# city_country: infer country (ISO 3166-1 alpha-2) from well-known cities
+
+aliases:
+  sf: San Francisco
+  "san fran": San Francisco
+  "san francisco, ca": San Francisco
+  nyc: New York
+  "new york city": New York
+  "ny": New York
+  "new york, ny": New York
+  la: Los Angeles
+  "los angeles, ca": Los Angeles
+  dc: Washington
+  "washington dc": Washington
+  "washington, dc": Washington
+  "d.c.": Washington
+  chi: Chicago
+  "chicago, il": Chicago
+  bos: Boston
+  "boston, ma": Boston
+  sea: Seattle
+  "seattle, wa": Seattle
+  atx: Austin
+  "austin, tx": Austin
+  pdx: Portland
+  "portland, or": Portland
+  slc: Salt Lake City
+  "salt lake city, ut": Salt Lake City
+  phx: Phoenix
+  "phoenix, az": Phoenix
+  mia: Miami
+  "miami, fl": Miami
+  nyc/sf: New York
+
+city_country:
+  San Francisco: US
+  New York: US
+  Los Angeles: US
+  Chicago: US
+  Seattle: US
+  Boston: US
+  Austin: US
+  Washington: US
+  Portland: US
+  Denver: US
+  Atlanta: US
+  Miami: US
+  Dallas: US
+  Houston: US
+  Phoenix: US
+  San Diego: US
+  Salt Lake City: US
+  Minneapolis: US
+  London: GB
+  Manchester: GB
+  Edinburgh: GB
+  Berlin: DE
+  Munich: DE
+  Hamburg: DE
+  Frankfurt: DE
+  Amsterdam: NL
+  Paris: FR
+  Lyon: FR
+  Stockholm: SE
+  Gothenburg: SE
+  Copenhagen: DK
+  Oslo: "NO"
+  Helsinki: FI
+  Zurich: CH
+  Geneva: CH
+  Vienna: AT
+  Warsaw: PL
+  Prague: CZ
+  Lisbon: PT
+  Madrid: ES
+  Barcelona: ES
+  Toronto: CA
+  Vancouver: CA
+  Montreal: CA
+  Sydney: AU
+  Melbourne: AU
+  Brisbane: AU
+  Singapore: SG
+  Tokyo: JP
+  Tel Aviv: IL
+  Bangalore: IN
+  Bengaluru: IN
+  Mumbai: IN
+  Hyderabad: IN
+  São Paulo: BR
+  "Sao Paulo": BR

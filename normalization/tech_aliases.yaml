@@ -1,0 +1,112 @@
+# tech_aliases.yaml — map raw tech strings to canonical names
+# Keys are lowercased. Values are canonical names.
+# Add new entries here; re-run `normalize` to apply.
+
+golang: go
+"go lang": go
+reactjs: react
+"react.js": react
+"react js": react
+vuejs: vue
+"vue.js": vue
+"vue js": vue
+angularjs: angular
+"angular.js": angular
+nodejs: node
+"node.js": node
+"node js": node
+expressjs: express
+"express.js": express
+nextjs: next.js
+"next js": next.js
+nuxtjs: nuxt.js
+"nuxt js": nuxt.js
+sveltejs: svelte
+"svelte.js": svelte
+postgres: postgresql
+postgresql: postgresql
+psql: postgresql
+mongo: mongodb
+"mongo db": mongodb
+es: elasticsearch
+elk: elasticsearch
+k8s: kubernetes
+kube: kubernetes
+tf: terraform
+js: javascript
+ts: typescript
+py: python
+rb: ruby
+"ruby on rails": rails
+ror: rails
+"c#": csharp
+".net": dotnet
+"asp.net": dotnet
+"asp.net core": dotnet
+gh: github
+"github actions": github-actions
+gcp: google-cloud
+"google cloud platform": google-cloud
+aws: aws
+"amazon web services": aws
+"amazon aws": aws
+azure: azure
+"microsoft azure": azure
+"ms azure": azure
+redis: redis
+"redis cache": redis
+kafka: kafka
+"apache kafka": kafka
+spark: apache-spark
+"apache spark": apache-spark
+dynamo: dynamodb
+"amazon dynamodb": dynamodb
+"amazon rds": rds
+graphql: graphql
+gql: graphql
+rest: rest-api
+"rest api": rest-api
+grpc: grpc
+ci/cd: ci-cd
+"ci / cd": ci-cd
+docker: docker
+dockerfile: docker
+"docker compose": docker-compose
+"docker-compose": docker-compose
+helm: helm
+"helm charts": helm
+ansible: ansible
+jenkins: jenkins
+circleci: circleci
+travisci: travis-ci
+"travis ci": travis-ci
+gh-actions: github-actions
+tailwind: tailwindcss
+"tailwind css": tailwindcss
+sass: sass
+scss: sass
+webpack: webpack
+vite: vite
+"react native": react-native
+flutter: flutter
+swift: swift
+kotlin: kotlin
+objc: objective-c
+"objective c": objective-c
+pandas: pandas
+numpy: numpy
+sklearn: scikit-learn
+"scikit learn": scikit-learn
+pytorch: pytorch
+"torch": pytorch
+tensorflow: tensorflow
+tf2: tensorflow
+"tf 2": tensorflow
+jax: jax
+llm: llm
+openai: openai-api
+langchain: langchain
+llama: llama
+"llama 2": llama
+huggingface: hugging-face
+"hugging face": hugging-face

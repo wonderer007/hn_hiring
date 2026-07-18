@@ -1,0 +1,67 @@
+# remote_region_aliases.yaml
+# Each key is a canonical enum value; its list contains lowercase keyword patterns.
+# Matching is substring-based (lowercased input contains any of these strings).
+# First match wins, checked in order: worldwide → us_only → eu_only → timezone_bound → other
+
+worldwide:
+  - worldwide
+  - "anywhere in the world"
+  - "from anywhere"
+  - global
+  - "fully remote"
+  - "100% remote"
+  - "remote (global)"
+  - "remote - global"
+  - "remote worldwide"
+  - "remote anywhere"
+  - international
+
+us_only:
+  - "us only"
+  - "usa only"
+  - "united states only"
+  - "remote us"
+  - "remote (us)"
+  - "remote - us"
+  - "us-based"
+  - "us residents"
+  - "must be us"
+  - "within the us"
+  - "us citizens"
+  - "us/canada"
+  - "us & canada"
+  - "north america only"
+
+eu_only:
+  - "eu only"
+  - "europe only"
+  - "european union"
+  - "remote eu"
+  - "remote - eu"
+  - "eu-based"
+  - "emea only"
+  - "within europe"
+
+timezone_bound:
+  - timezone
+  - time zone
+  - " est"
+  - " pst"
+  - " cst"
+  - " mst"
+  - " cet"
+  - " gmt"
+  - " utc"
+  - "eastern time"
+  - "pacific time"
+  - "central time"
+  - "mountain time"
+  - "overlap"
+  - "morning overlap"
+  - "business hours"
+  - "working hours"
+  - "us morning"
+  - "us hours"
+  - "european hours"
+
+other: []

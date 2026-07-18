@@ -6,4 +6,5 @@ __pycache__/
 dist/
 *.egg-info/
 .pytest_cache/
-.requirements.md
+.requirements1.md
+.requirements2.md
