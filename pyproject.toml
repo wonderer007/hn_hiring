@@ -1,0 +1,20 @@
+[project]
+name = "hn-hiring-ingest"
+version = "0.1.0"
+description = "Ingest HN 'Who is hiring?' threads into SQLite"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hn_ingest"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
