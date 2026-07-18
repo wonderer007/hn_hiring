@@ -1,5 +1,7 @@
 """Pure functions for classifying and parsing HN whoishiring thread titles."""
 
+from __future__ import annotations
+
 import re
 
 _MONTH_NAMES: dict[str, int] = {

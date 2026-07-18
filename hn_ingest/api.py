@@ -1,5 +1,7 @@
 """HN Algolia API client with rate limiting and retry logic."""
 
+from __future__ import annotations
+
 import time
 
 import httpx
