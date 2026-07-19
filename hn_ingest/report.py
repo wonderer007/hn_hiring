@@ -120,7 +120,7 @@ def cmd_report(prompt_version: str = "v1") -> None:
         """SELECT jt.tech_raw, COUNT(*) AS n
            FROM job_technologies jt
            JOIN jobs j ON j.id = jt.job_id
-           WHERE j.prompt_version = ? AND jt.tech_raw = jt.tech
+           WHERE j.prompt_version = ? AND jt.aliased = 0
            GROUP BY jt.tech_raw ORDER BY n DESC LIMIT 20""",
         (prompt_version,),
     ).fetchall()

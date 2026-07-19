@@ -76,7 +76,8 @@ CREATE TABLE IF NOT EXISTS job_locations (
 CREATE TABLE IF NOT EXISTS job_technologies (
     job_id INTEGER NOT NULL REFERENCES jobs(id),
     tech_raw TEXT NOT NULL,
-    tech TEXT NOT NULL
+    tech TEXT NOT NULL,
+    aliased INTEGER NOT NULL DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS post_classification (

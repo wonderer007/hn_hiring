@@ -1,6 +1,79 @@
 # tech_aliases.yaml — map raw tech strings to canonical names
 # Keys are lowercased. Values are canonical names.
 # Add new entries here; re-run `normalize` to apply.
+#
+# Self-mappings register a name as a known canonical value so it is
+# not flagged as "unmapped" in the report.
+
+# ── canonical passthrough (already clean) ─────────────────────────────────────
+python: python
+javascript: javascript
+typescript: typescript
+rust: rust
+go: go
+ruby: ruby
+java: java
+scala: scala
+"c++": c++
+"c#": csharp
+elixir: elixir
+haskell: haskell
+clojure: clojure
+ocaml: ocaml
+swift: swift
+kotlin: kotlin
+dart: dart
+lua: lua
+perl: perl
+r: r
+julia: julia
+react: react
+vue: vue
+angular: angular
+svelte: svelte
+"next.js": next.js
+"nuxt.js": nuxt.js
+remix: remix
+astro: astro
+rails: rails
+django: django
+flask: flask
+fastapi: fastapi
+express: express
+spring: spring
+laravel: laravel
+postgresql: postgresql
+mysql: mysql
+sqlite: sqlite
+mongodb: mongodb
+redis: redis
+elasticsearch: elasticsearch
+cassandra: cassandra
+"dynamodb": dynamodb
+"s3": s3
+aws: aws
+azure: azure
+"google-cloud": google-cloud
+kubernetes: kubernetes
+docker: docker
+terraform: terraform
+ansible: ansible
+graphql: graphql
+grpc: grpc
+kafka: kafka
+rabbitmq: rabbitmq
+nginx: nginx
+linux: linux
+sql: sql
+node: node
+rails: rails
+llm: llm
+llms: llms
+ai: ai
+ml: ml
+"next.js": next.js
+"tailwindcss": tailwindcss
+"distributed systems": distributed systems
 
 golang: go
 "go lang": go
@@ -110,3 +183,24 @@ llama: llama
 "llama 2": llama
 huggingface: hugging-face
 "hugging face": hugging-face
+robotics: robotics
+rag: rag
+tauri: tauri
+nvidia: nvidia
+amd: amd
+c/c++: c/c++
+llm apis: llm-apis
+git: git
+iot: iot
+clickhouse: clickhouse
+robotics: robotics
+directed energy: directed-energy
+websockets: websockets
+shadcn: shadcn
+databases: databases
+frameworks: frameworks
+integrations: integrations
+apis: apis
+gemini: gemini
+ios: ios
+firmware: firmware

@@ -137,7 +137,9 @@ def _recreate_normalized_tables(conn: sqlite3.Connection) -> None:
     );
     CREATE TABLE job_technologies (
         job_id INTEGER NOT NULL REFERENCES jobs(id),
-        tech_raw TEXT NOT NULL, tech TEXT NOT NULL
+        tech_raw TEXT NOT NULL,
+        tech TEXT NOT NULL,
+        aliased INTEGER NOT NULL DEFAULT 0  -- 1 if found in tech_aliases.yaml, 0 if passthrough
     );
     CREATE TABLE post_classification (
         post_id INTEGER NOT NULL,
@@ -262,14 +264,14 @@ def cmd_normalize(prompt_version: str = "v1") -> None:
 
             # technologies
             for tech_raw in techs_raw:
-                tech = apply_tech_alias(tech_raw, tech_aliases)
-                if tech != tech_raw.strip().lower():
-                    pass  # mapped
-                else:
-                    unmapped_tech[tech_raw.lower()] = unmapped_tech.get(tech_raw.lower(), 0) + 1
+                raw_lower = tech_raw.strip().lower()
+                in_aliases = raw_lower in tech_aliases
+                tech = tech_aliases[raw_lower] if in_aliases else raw_lower
+                if not in_aliases:
+                    unmapped_tech[raw_lower] = unmapped_tech.get(raw_lower, 0) + 1
                 conn.execute(
-                    "INSERT INTO job_technologies (job_id, tech_raw, tech) VALUES (?,?,?)",
-                    (job_id, tech_raw, tech),
+                    "INSERT INTO job_technologies (job_id, tech_raw, tech, aliased) VALUES (?,?,?,?)",
+                    (job_id, tech_raw, tech, int(in_aliases)),
                 )
 
         processed += 1
